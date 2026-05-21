@@ -1,3 +1,7 @@
 ## Ignore claude files
 /.claude
 CLAUDE.local.md
+
+## Pycache
+/brobot/__pycache__/
+__pycache__/

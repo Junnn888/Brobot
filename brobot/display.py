@@ -10,7 +10,7 @@ def make_device():
     if os.environ.get("BROBOT_EMULATE"):
         from luma.emulator.device import pygame
 
-        return pygame(width=WIDTH, height=HEIGHT, scale=4, transform="none")
+        return pygame(width=WIDTH, height=HEIGHT, scale=6, transform="identity")
 
     from luma.core.interface.serial import spi
     from luma.oled.device import ssd1309
