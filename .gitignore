@@ -5,3 +5,6 @@ CLAUDE.local.md
 ## Pycache
 /brobot/__pycache__/
 __pycache__/
+
+## Plans folder
+/plans
