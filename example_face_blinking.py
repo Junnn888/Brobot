@@ -2,6 +2,18 @@
 
 import random
 import time
+import os
+
+
+def make_device():
+    if os.environ.get("BROBOT_EMULATE"):
+        from luma.emulator.device import pygame
+        return pygame(width=WIDTH, height=HEIGHT, scale=4, transform="none")
+
+    from luma.core.interface.serial import spi
+    from luma.oled.device import ssd1309
+    serial = spi(port=0, device=0, gpio_DC=25, gpio_RST=24, bus_speed_hz=8000000)
+    return ssd1309(serial, width=WIDTH, height=HEIGHT)
 
 from luma.core.interface.serial import spi
 from luma.core.render import canvas
@@ -95,8 +107,7 @@ def render_mouth(draw):
 
 
 def main():
-    serial = spi(port=0, device=0, gpio_DC=25, gpio_RST=24, bus_speed_hz=8000000)
-    device = ssd1309(serial, width=WIDTH, height=HEIGHT)
+    device = make_device()
 
     eyes = Eyes()
 
