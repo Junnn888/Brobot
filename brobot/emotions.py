@@ -104,6 +104,11 @@ _OVERRIDES: dict[str, dict[str, float]] = {
 }
 
 
+def list_emotions() -> list[str]:
+    """Return all available emotion names."""
+    return list(_OVERRIDES)
+
+
 def get_emotion(name: str) -> dict[str, float]:
     """Return full parameter set for the named emotion."""
     return {**DEFAULTS, **_OVERRIDES[name]}

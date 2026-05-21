@@ -6,7 +6,7 @@ import time
 from luma.core.render import canvas
 
 from brobot.display import make_device
-from brobot.emotions import _OVERRIDES
+from brobot.emotions import list_emotions
 from brobot.face import Face
 
 TARGET_FPS = 60
@@ -16,7 +16,7 @@ DEMO_PAUSE_RANGE = (4.0, 6.0)
 
 
 def _shuffled_emotions():
-    names = list(_OVERRIDES)
+    names = list_emotions()
     while True:
         random.shuffle(names)
         yield from names
