@@ -1,0 +1,13 @@
+[project]
+name = "brobot"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "luma.core",
+    "Pillow",
+]
+
+[project.optional-dependencies]
+hardware = ["luma.oled"]
+emulator = ["luma.emulator"]
+dev = ["ruff", "pytest"]
