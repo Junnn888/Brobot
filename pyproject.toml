@@ -5,9 +5,15 @@ requires-python = ">=3.11"
 dependencies = [
     "luma.core",
     "Pillow",
+    "anthropic",
+    "python-dotenv",
 ]
-
+ 
 [project.optional-dependencies]
 hardware = ["luma.oled"]
 emulator = ["luma.emulator"]
 dev = ["ruff", "pytest"]
+ 
+[tool.setuptools.packages.find]
+include = ["brobot*"]
+

@@ -1,3 +1,9 @@
+## ENV
+.env
+.env.local
+.env.prod
+
+
 ## Ignore claude files
 /.claude
 CLAUDE.local.md
@@ -8,3 +14,11 @@ __pycache__/
 
 ## Plans folder
 /plans
+
+## MacOS Cache
+.DS_Store
+
+## Build/install artefacts
+*.egg-info/
+build/
+dist/
